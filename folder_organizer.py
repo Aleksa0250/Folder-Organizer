@@ -7,22 +7,20 @@ def organize_folder(source):
     source = Path(source)
 
     categories = {
-        "Slike": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp", ".ico", ".tiff", ".raw", ".heic"],
-        "Video": [".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp"],
+        "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp", ".ico", ".tiff", ".raw", ".heic"],
+        "Videos": [".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp"],
         "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a", ".opus"],
-        "Dokumenti": [".pdf", ".doc", ".docx", ".odt", ".rtf", ".txt", ".md", ".epub"],
-        "Tabele": [".xls", ".xlsx", ".ods", ".csv"],
-        "Prezentacije": [".ppt", ".pptx", ".odp", ".key"],
-        "Kod": [".py", ".js", ".ts", ".html", ".css", ".java", ".cpp", ".c",
-                ".h", ".cs", ".go", ".rs", ".php", ".rb", ".sh", ".bat", ".sql"],
-        "Arhive": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
-        "Izvrsni": [".exe", ".msi", ".dmg", ".deb", ".rpm", ".apk"],
-        "Fontovi": [".ttf", ".otf", ".woff", ".woff2"],
-        "Baze_podataka": [".db", ".sqlite", ".sqlite3", ".mdb"],
-        "3D_i_CAD": [".obj", ".fbx", ".stl", ".blend", ".dae"]
+        "Documents": [".pdf", ".doc", ".docx", ".odt", ".rtf", ".txt", ".md", ".epub"],
+        "Spreadsheets": [".xls", ".xlsx", ".ods", ".csv"],
+        "Presentations": [".ppt", ".pptx", ".odp", ".key"],
+        "Code": [".py", ".js", ".ts", ".html", ".css", ".java", ".cpp", ".c",
+                 ".h", ".cs", ".go", ".rs", ".php", ".rb", ".sh", ".bat", ".sql"],
+        "Archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
+        "Executables": [".exe", ".msi", ".dmg", ".deb", ".rpm", ".apk"],
+        "Fonts": [".ttf", ".otf", ".woff", ".woff2"],
+        "Databases": [".db", ".sqlite", ".sqlite3", ".mdb"],
+        "3D_and_CAD": [".obj", ".fbx", ".stl", ".blend", ".dae"]
     }
-
-
 
     def unique_name(path):
 
@@ -46,7 +44,7 @@ def organize_folder(source):
             counter += 1
 
     if not source.is_dir():
-        print("Folder ne postoji!")
+        print("Folder does not exist!")
         return
 
     moved = 0
@@ -58,7 +56,7 @@ def organize_folder(source):
 
         ext = file.suffix.lower()
 
-        folder = "Ostalo"
+        folder = "Others"
 
         for category, extensions in categories.items():
             if ext in extensions:
@@ -77,9 +75,9 @@ def organize_folder(source):
 
         moved += 1
 
-    print(f"\nUkupno premešteno fajlova: {moved}")
+    print(f"\nTotal files moved: {moved}")
 
 
-folder = input("Unesi putanju foldera: ")
+folder = input("Enter folder path: ")
 
 organize_folder(folder)
