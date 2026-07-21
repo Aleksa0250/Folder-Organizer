@@ -1,10 +1,10 @@
-# 📁 Folder Organizer (Python)
+ Folder Organizer (Python)
 
 A simple Python script that automatically organizes files in a selected folder by sorting them into categorized subfolders based on file extensions.
 
 ---
 
-## ⚙️ How it works
+  How it works
 
 - User enters a folder path
 - Script scans all files in that folder
@@ -14,7 +14,7 @@ A simple Python script that automatically organizes files in a selected folder b
 
 ---
 
-## 📂 Categories
+  Categories
 
 Files are organized into the following folders:
 
@@ -34,7 +34,7 @@ Files are organized into the following folders:
 
 ---
 
-## 🚀 Features
+Features
 
 - Automatic file sorting by extension
 - Auto-creates missing folders
@@ -44,7 +44,7 @@ Files are organized into the following folders:
 
 ---
 
-## 🛠️ Technologies
+ Technologies
 
 - Python 3
 - pathlib
@@ -53,7 +53,7 @@ Files are organized into the following folders:
 
 ---
 
-## ▶️ Usage
+ Usage
 
 ```bash
 python folder_organizer.py
